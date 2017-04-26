@@ -1,2 +1,6 @@
 #!/bin/bash
 alias explorer='nautilus $@'
+alias cp='cp -r'
+alias e='nano $@'
+alias u='curl https://raw.githubusercontent.com/antigravities/.ag/master/.ag > ~/.ag; cd ~; source .bashrc'
+alias .ag="cd ~/ag; cp ~/.ag .; git commit -a --allow-empty-message -m ''; git push; u"
