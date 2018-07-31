@@ -1,5 +1,4 @@
 #!/bin/bash
-alias explorer='nautilus $@'
 alias cp='cp -r'
 alias e='nano $@'
 
@@ -20,5 +19,8 @@ function .ag(){
 	git push
 }
 
+alias refresh="source ~/.ag"
+
 alias txiwi="xiwi -T $@"
 alias sublime="txiwi subl -w $@"
+alias explorer='txiwi thunar $@'
