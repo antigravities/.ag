@@ -24,3 +24,4 @@ alias refresh="source ~/.ag"
 alias txiwi="xiwi -T $@"
 alias sublime="txiwi subl -w $@"
 alias explorer='txiwi thunar $@'
+alias x="txiwi startxfce4"
