@@ -20,9 +20,5 @@ function .ag(){
 	git push
 }
 
-function eeti(){
-	import /tmp/eeti.png
-	echo -n "File uploaded to: ";
-	curl -s -X POST -F file="@/tmp/eeti.png" -F user="$EETI_USERNAME" -F pass="$EETI_PASSWORD" "https://eeti.me/upload.php?uploaded" | tee >(xclip -selection clipboard)
-	echo "";
-}
+alias txiwi="xiwi -T $@"
+alias sublime="txiwi subl -w $@"
