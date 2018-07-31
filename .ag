@@ -1,6 +1,5 @@
 #!/bin/bash
 alias cp='cp -r'
-alias e='nano $@'
 
 function u(){
 	curl https://raw.githubusercontent.com/antigravities/.ag/master/.ag > ~/.ag
@@ -21,7 +20,15 @@ function .ag(){
 
 alias refresh="source ~/.ag"
 
+alias e="nano $@"
+
 alias txiwi="xiwi -T $@"
+
 alias sublime="txiwi subl -w $@"
 alias explorer='txiwi thunar $@'
+
 alias x="txiwi startxfce4"
+alias startx="x"
+
+alias gedit="txiwi mousepad $@"
+alias ge="gedit $@"
