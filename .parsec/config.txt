@@ -1,0 +1,8 @@
+encoder_fps=30
+
+client_vsync=0
+
+server_resolution_x=1280
+server_resolution_y=720
+
+client_immersive=1
