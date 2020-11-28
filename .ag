@@ -23,6 +23,16 @@ fi
 # bash history
 export HISTCONTROL=ignoreboth:erasedups
 
+# do we have neofetch? and a neofetch pic? if so, save the cmdline for the bottom
+nf=""
+neofetch --version > /dev/null
+if [ "$?" != "127" ]; then
+	nf="neofetch"
+	if [ -f "$HOME/neofetch.jpg" ]; then
+		nf="$nf --iterm2 $HOME/neofetch.jpg"
+	fi
+fi
+
 # ==== .ag stuff ====
 
 # sync .ag with remote
@@ -36,7 +46,7 @@ function .ag.u(){
 function .ag.p(){
 	.ag.r
 
-	if ! [ -d "~/ag" ]; then
+	if [ ! -d "~/ag" ]; then
 		git clone "git@github.com:antigravities/.ag.git" ~/ag
 	fi
 
@@ -55,3 +65,5 @@ alias .ag.r="source ~/.ag"
 
 # edit .ag
 alias .ag.e="$EDITOR ~/.ag"
+
+$nf
