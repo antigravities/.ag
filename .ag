@@ -9,14 +9,14 @@ fi
 
 export HISTCONTROL=ignoreboth:erasedups
 
-function u(){
+function .ag.u(){
 	curl https://raw.githubusercontent.com/antigravities/.ag/master/.ag > ~/.ag
 	cd
 	source .ag
 }
 
-function .ag(){
-	refresh
+function .ag.p(){
+	.ag.r
 
 	if ! [ -d "~/ag" ]; then
 		git clone "git@github.com:antigravities/.ag.git" ~/ag
@@ -32,4 +32,4 @@ function .ag(){
 	cd $prwd
 }
 
-alias refresh="source ~/.ag"
+alias .ag.r="source ~/.ag"
