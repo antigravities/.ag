@@ -2,6 +2,8 @@
 alias cp='cp -r'
 alias ls='ls --color'
 PS1="[\u@\h \w] $ "
+export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH:/opt/homebrew/bin
+export HISTCONTROL=ignoreboth:erasedups
 
 function u(){
 	curl https://raw.githubusercontent.com/antigravities/.ag/master/.ag > ~/.ag
@@ -10,6 +12,8 @@ function u(){
 }
 
 function .ag(){
+	refresh
+
 	if ! [ -d "~/ag" ]; then
 		git clone "git@github.com:antigravities/.ag.git" ~/ag
 	fi
