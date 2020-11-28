@@ -1,20 +1,38 @@
 #!/bin/bash
+
+# automatically assume recursion with cp
 alias cp='cp -r'
+
+# color ls (disabled by default on macOS)
 alias ls='ls --color'
+
+# my preferred PS1 (lame, I know)
 PS1="[\u@\h \w] $ "
 
+# use homebrew gnubin if we're on macOS
 if [ "$(uname)" == "Darwin" ]; then
 	export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH:/opt/homebrew/bin
 fi
 
+# set nano as default text editor, if we have it
+nano --version > /dev/null
+if [ "$?" == "0" ]; then
+	EDITOR="nano"
+fi
+
+# bash history
 export HISTCONTROL=ignoreboth:erasedups
 
+# ==== .ag stuff ====
+
+# sync .ag with remote
 function .ag.u(){
 	curl https://raw.githubusercontent.com/antigravities/.ag/master/.ag > ~/.ag
 	cd
 	source .ag
 }
 
+# push .ag to remote
 function .ag.p(){
 	.ag.r
 
@@ -32,4 +50,8 @@ function .ag.p(){
 	cd $prwd
 }
 
+# refresh/re-source .ag
 alias .ag.r="source ~/.ag"
+
+# edit .ag
+alias .ag.e="$EDITOR ~/.ag"
