@@ -2,7 +2,11 @@
 alias cp='cp -r'
 alias ls='ls --color'
 PS1="[\u@\h \w] $ "
-export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH:/opt/homebrew/bin
+
+if [ "$(uname)" == "Darwin" ]; then
+	export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH:/opt/homebrew/bin
+fi
+
 export HISTCONTROL=ignoreboth:erasedups
 
 function u(){
