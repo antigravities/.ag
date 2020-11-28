@@ -22,10 +22,14 @@ function .ag(){
 		git clone "git@github.com:antigravities/.ag.git" ~/ag
 	fi
 
+	prwd=$(pwd)
+
 	cd ~/ag
 	cp ~/.ag .
 	git commit -a --allow-empty-message -m ''
 	git push
+
+	cd $prwd
 }
 
 alias refresh="source ~/.ag"
